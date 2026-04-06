@@ -428,3 +428,124 @@ height: 100vh;
   background: black;
   color: white;
 }
+
+/* --- RESPONSIVE LAYOUTS (ADD TO BOTTOM OF FILE) --- */
+
+/* Tablet and Small Laptops */
+@media (max-width: 1024px) {
+  .menu {
+    width: auto;
+    gap: 15px;
+    font-size: 14px;
+  }
+
+  .grid-container {
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "box-1 box-1"
+      "box-2 box-2"
+      "box-3 box-4";
+    grid-auto-columns: 1fr 1fr;
+  }
+
+  .productlist {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  .modal, .cart {
+    width: 95%;
+    height: auto;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  body, section {
+    padding: 10px;
+  }
+
+  /* Header & Nav */
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0;
+    gap: 15px;
+  }
+
+  .menu {
+    display: none; /* Usually hidden behind a burger menu on mobile */
+  }
+
+  /* Hero Section */
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item-1 > h1 {
+    font-size: 28px;
+  }
+
+  /* Product Page */
+  .productpgheader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .producctpgdescriptions {
+    margin-right: 0;
+  }
+
+  .producctpgdescriptions > p {
+    width: 100%;
+  }
+
+  .productlist {
+    grid-template-columns: repeat(auto-fit, 200px);
+    width: 100%;
+  }
+
+  /* Product Modal */
+  .modal {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .modalimgcon {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+    height: 250px;
+  }
+
+  /* Cart & Payment */
+  .cart {
+    padding: 20px;
+  }
+
+  .cart-details {
+    flex-direction: column;
+  }
+
+  .cart-list, .payment-section {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+
+  .cart-item {
+    height: auto;
+  }
+
+  .cartimgcon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .cart-price > h5 {
+    font-size: 18px;
+  }
+}
